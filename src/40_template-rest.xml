@@ -1,0 +1,7 @@
+<!-- GET features list available for <template> -->
+    <mapping>
+      <target>rest_template_GET@libfty_template_rest</target>
+      <url>^/api/v1/admin/template/features$</url>
+      <method>GET</method>
+    </mapping>
+
