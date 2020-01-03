@@ -52,13 +52,25 @@
         pretty-print = "no" keep-tree = "true" />
 
     <!-- Here we add the direct dependencies to our packages -->
-        <!-- Dependencies always use in our rest modules -->
-    <use project = "libsasl2" header = "sasl/sasl.h" debian_name = "libsasl2-dev" redhat_name = "cyrus-sasl-devel"/>
+    <use project = "czmq"
+        repository = "https://github.com/42ity/czmq.git"
+        min_major = "3" min_minor = "0" min_patch = "2" >
 
-    <use project = "tntdb" repository = "https://github.com/42ity/tntdb.git" builddir = "tntdb"/>
+        <use project = "libzmq"
+            repository = "https://github.com/42ity/libzmq.git" >
+
+            <use project = "libsodium" prefix = "sodium"
+                repository = "https://github.com/42ity/libsodium.git" 
+                test = "sodium_init" />
+        </use>
+    </use>
 
     <use project = "cxxtools"  header = "cxxtools/allocator.h"
         repository = "https://github.com/42ity/cxxtools.git" />
+
+    <use project = "libsasl2" header = "sasl/sasl.h" debian_name = "libsasl2-dev" redhat_name = "cyrus-sasl-devel"/>
+
+    <use project = "tntdb" repository = "https://github.com/42ity/tntdb.git" builddir = "tntdb"/>
     
     <use project = "fty-common" libname = "libfty_common" header = "fty_common.h"
         repository = "https://github.com/42ity/fty-common.git" />

@@ -1,5 +1,8 @@
-   fty-certificate-generator-rest -> tntdb;
+   fty-certificate-generator-rest -> libsodium;
+   fty-certificate-generator-rest -> libzmq;
+   fty-certificate-generator-rest -> czmq;
    fty-certificate-generator-rest -> cxxtools;
+   fty-certificate-generator-rest -> tntdb;
    fty-certificate-generator-rest -> fty-common;
    fty-certificate-generator-rest -> fty-common-logging;
    fty-certificate-generator-rest -> fty-common-rest;
