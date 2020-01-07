@@ -99,7 +99,7 @@
          At least one non-private and stable class should be declared,
          in order to generate lib* packaging metadata with zproject.
          It is OPTIONALLY included in build, so should be a bogus file
-         with no consequences if it's missing - enter stub_template_rest.
+         with no consequences if it's missing - enter stub_certificate_generator_rest.
      -->
     <class name = "helpers_certificate_generator_rest" private = "1" selftest = "0">Helpers</class>
 
@@ -115,4 +115,5 @@
     <class name = "rest_csr_GET" private = "1" state = "stable" selftest = "0" />
     <class name = "rest_csr_DELETE" private = "1" state = "stable" selftest = "0" />
 
+    <class name = "stub_certificate_generator_rest" stable = "1">REST API for Certificate Generator</class>
 </project>

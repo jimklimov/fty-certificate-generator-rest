@@ -22,6 +22,7 @@ src_libfty_certificate_generator_rest_la_SOURCES = \
     src/rest_csr_POST.cc \
     src/rest_csr_GET.cc \
     src/rest_csr_DELETE.cc \
+    src/stub_certificate_generator_rest.cc \
     src/platform.h
 
 if ENABLE_DRAFTS

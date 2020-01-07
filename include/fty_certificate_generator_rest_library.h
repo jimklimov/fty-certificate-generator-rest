@@ -78,15 +78,14 @@
 #   endif
 #endif
 
-//  Project has no stable classes, so we build the draft API
-#undef  FTY_CERTIFICATE_GENERATOR_REST_BUILD_DRAFT_API
-#define FTY_CERTIFICATE_GENERATOR_REST_BUILD_DRAFT_API
-
 //  Opaque class structures to allow forward references
 //  These classes are stable or legacy and built in all releases
+typedef struct _stub_certificate_generator_rest_t stub_certificate_generator_rest_t;
+#define STUB_CERTIFICATE_GENERATOR_REST_T_DEFINED
 
 
 //  Public classes, each with its own header file
+#include "stub_certificate_generator_rest.h"
 
 #ifdef FTY_CERTIFICATE_GENERATOR_REST_BUILD_DRAFT_API
 

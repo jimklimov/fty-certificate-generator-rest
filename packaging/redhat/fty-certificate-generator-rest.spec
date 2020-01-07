@@ -1,6 +1,9 @@
 #
 #    fty-certificate-generator-rest - Certificate Generator REST API
 #
+#   NOTE: This file was customized after generation,
+#   take care to keep this during updates.
+#
 #    Copyright (C) 2014 - 2019 Eaton
 #
 #    This program is free software; you can redistribute it and/or modify
@@ -28,7 +31,6 @@
 %else
 %define DRAFTS no
 %endif
-%global debug_package %{nil}
 Name:           fty-certificate-generator-rest
 Version:        1.0.0
 Release:        1
@@ -63,6 +65,52 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 
 %description
 fty-certificate-generator-rest certificate generator rest api.
+
+%package -n libfty_certificate_generator_rest1
+Group:          System/Libraries
+Summary:        certificate generator rest api shared library
+
+%description -n libfty_certificate_generator_rest1
+This package contains shared library for fty-certificate-generator-rest: certificate generator rest api
+
+%post -n libfty_certificate_generator_rest1 -p /sbin/ldconfig
+%postun -n libfty_certificate_generator_rest1 -p /sbin/ldconfig
+
+# Note: the .so file is delivered as part of main package for tntnet to find it
+%files -n libfty_certificate_generator_rest1
+%defattr(-,root,root)
+%{_libdir}/libfty_certificate_generator_rest.so.*
+%{_libdir}/libfty_certificate_generator_rest.so
+
+%package devel
+Summary:        certificate generator rest api
+Group:          System/Libraries
+Requires:       libfty_certificate_generator_rest1 = %{version}
+Requires:       libsodium-devel
+Requires:       zeromq-devel
+Requires:       czmq-devel >= 3.0.2
+Requires:       cxxtools-devel
+Requires:       cyrus-sasl-devel
+Requires:       tntdb-devel
+Requires:       fty-common-devel
+Requires:       fty-common-logging-devel
+Requires:       fty-common-rest-devel
+Requires:       fty-common-mlm-devel
+#Requires:       fty-common-socket-devel
+Requires:       fty-certificate-generator-devel
+
+%description devel
+certificate generator rest api development tools
+This package contains development files for fty-certificate-generator-rest: certificate generator rest api
+
+# Note: the .so file is delivered as part of main package for tntnet to find it
+%files devel
+%defattr(-,root,root)
+%{_includedir}/*
+###%{_libdir}/libfty_certificate_generator_rest.so
+%{_libdir}/pkgconfig/libfty_certificate_generator_rest.pc
+%{_mandir}/man3/*
+%{_mandir}/man7/*
 
 %prep
 

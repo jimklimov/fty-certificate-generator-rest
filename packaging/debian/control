@@ -40,11 +40,40 @@ Build-Depends: debhelper (>= 9),
     asciidoc-base | asciidoc, xmlto,
     dh-autoreconf
 
+Package: libfty-certificate-generator-rest1
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: fty-certificate-generator-rest shared library
+ This package contains shared library for fty-certificate-generator-rest:
+ certificate generator rest api
+
+Package: libfty-certificate-generator-rest-dev
+Architecture: any
+Section: libdevel
+Depends:
+    ${misc:Depends},
+    libsodium-dev,
+    libzmq3-dev,
+    libczmq-dev (>= 3.0.2),
+    libcxxtools-dev,
+    libsasl2-dev,
+    libtntdb-dev,
+    libfty-common-dev,
+    libfty-common-logging-dev,
+    libfty-common-rest-dev,
+    libfty-common-mlm-dev,
+    libfty-certificate-generator-dev,
+    libfty-certificate-generator-rest1 (= ${binary:Version})
+Description: fty-certificate-generator-rest development tools
+ This package contains development files for fty-certificate-generator-rest:
+ certificate generator rest api
+
 Package: fty-certificate-generator-rest-dbg
 Architecture: any
 Section: debug
 Priority: optional
 Depends:
+    libfty-certificate-generator-rest1 (= ${binary:Version}),
     ${misc:Depends}
 Description: fty-certificate-generator-rest debugging symbols
  This package contains the debugging symbols for fty-certificate-generator-rest:

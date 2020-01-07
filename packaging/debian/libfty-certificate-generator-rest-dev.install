@@ -7,4 +7,3 @@ usr/include/*
 ###usr/lib/*/*/libfty_certificate_generator_rest.so
 ###usr/lib/*/libfty_certificate_generator_rest.so
 usr/lib/*/pkgconfig/libfty_certificate_generator_rest.pc
-
