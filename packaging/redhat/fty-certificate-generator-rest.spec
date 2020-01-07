@@ -31,7 +31,6 @@
 %else
 %define DRAFTS no
 %endif
-%global debug_package %{nil}
 Name:           fty-certificate-generator-rest
 Version:        1.0.0
 Release:        1
@@ -90,14 +89,15 @@ Requires:       libfty_certificate_generator_rest1 = %{version}
 Requires:       libsodium-devel
 Requires:       zeromq-devel
 Requires:       czmq-devel >= 3.0.2
-Requires:       fty-common-devel
 Requires:       cxxtools-devel
-Requires:       fty-common-logging-devel
-Requires:       fty-common-mlm-devel
-Requires:       fty-common-rest-devel
-Requires:       fty-common-socket-devel
-Requires:       fty-certificate-generator-devel
+Requires:       cyrus-sasl-devel
 Requires:       tntdb-devel
+Requires:       fty-common-devel
+Requires:       fty-common-logging-devel
+Requires:       fty-common-rest-devel
+Requires:       fty-common-mlm-devel
+#Requires:       fty-common-socket-devel
+Requires:       fty-certificate-generator-devel
 
 %description devel
 certificate generator rest api development tools

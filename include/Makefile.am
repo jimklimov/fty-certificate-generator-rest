@@ -4,6 +4,7 @@
 ################################################################################
 nobase_include_HEADERS = \
     fty-certificate-generator-rest.h \
+    stub_certificate_generator_rest.h \
     fty_certificate_generator_rest_library.h
 
 
