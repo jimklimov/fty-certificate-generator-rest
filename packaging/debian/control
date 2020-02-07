@@ -3,7 +3,7 @@
 #
 #    fty-certificate-generator-rest - Certificate Generator REST API
 #
-#    Copyright (C) 2014 - 2019 Eaton
+#    Copyright (C) 2019 - 2020 Eaton
 #
 #    This program is free software; you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
@@ -78,24 +78,3 @@ Depends:
 Description: fty-certificate-generator-rest debugging symbols
  This package contains the debugging symbols for fty-certificate-generator-rest:
  certificate generator rest api.
-
-# Customization over zproject-generated code follows
-# for the legacy-named metapackage to group the common
-# installation dependency for other components:
-Package: fty-certificate-generator-rest
-Architecture: any
-Section: net
-Priority: optional
-Depends:
-    libfty-certificate-generator-rest1 (= ${binary:Version}),
-    ${misc:Depends},
-    tntnet-runtime,
-    malamute,
-    libfty-common1,
-    libfty-common-mlm1,
-    libfty-common-db1,
-    libfty-common-rest1,
-    ipc-data
-Recommends: msmtp
-Description: grouping of end-user solution with fty-certificate-generator-rest
-
