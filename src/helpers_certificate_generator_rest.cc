@@ -19,7 +19,7 @@
     =========================================================================
 */
 
-#include "helpers_certificate_generator_rest.h"
+#include "src/helpers_certificate_generator_rest.h"
 
 namespace restapi
 {
