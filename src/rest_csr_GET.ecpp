@@ -63,7 +63,7 @@ UserInfo user;
         CertGenAccessor cgAccessor(syncClient);
 
         std::string csrPem = cgAccessor.getPendingCsr(serviceName).getPem();
-        
+
         cxxtools::SerializationInfo si;
         si.addMember("csr_pem") <<= csrPem;
 
@@ -76,11 +76,11 @@ UserInfo user;
     {
         log_info_audit(
             "Request GET internal-certificate -> getting CSR PEM FAILED");
-        
+
         std::string msg = TRANSLATE_ME(
             "Error while retrieving CSR for service %s: %s",
             serviceName.c_str(), JSONIFY(e.what()).c_str());
-        
+
         http_die("internal-error", msg.c_str());
     }
 

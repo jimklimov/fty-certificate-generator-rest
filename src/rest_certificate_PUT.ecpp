@@ -70,7 +70,7 @@ UserInfo user;
         CertGenAccessor cgAccessor(syncClient);
 
         cxxtools::SerializationInfo si;
-      
+
         try
         {
             std::stringstream bodyStr;
@@ -95,11 +95,11 @@ UserInfo user;
     {
         log_info_audit(
             "Request PUT internal-certificate -> import signed certificate FAILED");
-        
+
         std::string msg = TRANSLATE_ME(
             "Error while importing signed certificate for service %s: %s",
             serviceName.c_str(), JSONIFY(e.what()).c_str());
-        
+
         http_die("internal-error", msg.c_str());
     }
 

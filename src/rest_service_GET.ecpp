@@ -63,7 +63,7 @@ UserInfo user;
         CertGenAccessor cgAccessor(syncClient);
 
         std::string csrCreationTime = std::to_string(cgAccessor.getPendingCsrCreationDate(serviceName));
-        
+
         cxxtools::SerializationInfo si;
         si.addMember("csr_creation_date") <<= csrCreationTime;
 
@@ -76,11 +76,11 @@ UserInfo user;
     {
         log_info_audit(
             "Request GET internal-certificate -> getting service status FAILED");
-        
+
         std::string msg = TRANSLATE_ME(
             "Error while retrieving status for service %s: %s",
             serviceName.c_str(), JSONIFY(e.what()).c_str());
-        
+
         http_die("internal-error", msg.c_str());
     }
 
